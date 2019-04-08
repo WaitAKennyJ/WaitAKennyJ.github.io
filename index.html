@@ -385,7 +385,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-08 15:33:32" itemprop="dateModified" datetime="2019-04-08T15:33:32+08:00">2019-04-08</time>
+                <time title="Modified: 2019-04-08 15:35:02" itemprop="dateModified" datetime="2019-04-08T15:35:02+08:00">2019-04-08</time>
               
             
           </span>
@@ -482,7 +482,7 @@
 <h4 id="str1-str7"><a href="#str1-str7" class="headerlink" title="str1 == str7"></a>str1 == str7</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"HelloKennyJ"</span>;</span><br><span class="line">String str4 = <span class="string">"Hello"</span>;</span><br><span class="line">String str5 = <span class="string">"KennyJ"</span>;</span><br><span class="line">String str7 = str4 + str5;</span><br><span class="line">System.out.println(str1 == str7); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <p>其中前三句变量存储的是常量池中的引用地址。</p>
 <p>第四句执行时，JVM会在堆（heap）中创建一个以str4为基础的一个StringBuilder对象，然后调用StringBuilder的append()方法完成与str5的合并，之后会调用toString()方法在堆（heap）中创建一个String对象，并把这个String对象的引用赋给str7。<br>也就是说str7和str1是两个不同的对象。</p>
-<p>###String相关<br>由于String的不可变性导致，字符串变更时效率低下，在之后得JDK版本中出现了StringBuilder和StringBuffer 。</p>
+<h3 id="String相关"><a href="#String相关" class="headerlink" title="String相关"></a>String相关</h3><p>由于String的不可变性导致，字符串变更时效率低下，在之后得JDK版本中出现了StringBuilder和StringBuffer 。</p>
 <table>
 <thead>
 <tr>
