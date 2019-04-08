@@ -96,16 +96,20 @@
 
 
 
-  <meta name="description" content="不相信自己的人，连努力的价值都没有。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kennyJBlog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="String简介String定义:12public final class Stringimplements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence &amp;#123;&amp;#125; 不可变String String对象是不可变的。查看JDK文档你会发现，String类中每一个看起来会修改String值的方法，实际上都是创建">
+<meta name="keywords" content="Java,String">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java String 总结">
+<meta property="og:url" content="http://yoursite.com/2019/04/07/Java-String-总结/index.html">
 <meta property="og:site_name" content="kennyJBlog">
-<meta property="og:description" content="不相信自己的人，连努力的价值都没有。">
+<meta property="og:description" content="String简介String定义:12public final class Stringimplements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence &amp;#123;&amp;#125; 不可变String String对象是不可变的。查看JDK文档你会发现，String类中每一个看起来会修改String值的方法，实际上都是创建">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/07/Java-String-总结/JavaString_Heap.jpg">
+<meta property="og:updated_time" content="2019-04-08T06:54:11.595Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kennyJBlog">
-<meta name="twitter:description" content="不相信自己的人，连努力的价值都没有。">
+<meta name="twitter:title" content="Java String 总结">
+<meta name="twitter:description" content="String简介String定义:12public final class Stringimplements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence &amp;#123;&amp;#125; 不可变String String对象是不可变的。查看JDK文档你会发现，String类中每一个看起来会修改String值的方法，实际上都是创建">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/07/Java-String-总结/JavaString_Heap.jpg">
 
 
 
@@ -113,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/07/Java-String-总结/">
 
 
 
@@ -123,7 +127,7 @@
   };
 </script>
 
-  <title>kennyJBlog</title>
+  <title>Java String 总结 | kennyJBlog</title>
   
 
 
@@ -171,8 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -210,7 +213,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -306,9 +309,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -340,10 +343,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/07/Java-String-总结/" class="post-title-link" itemprop="url">Java String 总结</a>
+          <h1 class="post-title" itemprop="name headline">Java String 总结
+
               
             
           </h1>
@@ -444,9 +445,7 @@
       
 
       
-        
-          
-            <h2 id="String简介"><a href="#String简介" class="headerlink" title="String简介"></a>String简介</h2><h4 id="String定义"><a href="#String定义" class="headerlink" title="String定义:"></a>String定义:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;, <span class="title">CharSequence</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="String简介"><a href="#String简介" class="headerlink" title="String简介"></a>String简介</h2><h4 id="String定义"><a href="#String定义" class="headerlink" title="String定义:"></a>String定义:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;, <span class="title">CharSequence</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="不可变String"><a href="#不可变String" class="headerlink" title="不可变String"></a>不可变String</h4><blockquote>
 <p>String对象是不可变的。查看JDK文档你会发现，String类中每一个看起来会修改String值的方法，实际上都是创建了一个全新的的String对象，以包含修改后的字符串内容。而最初的String对象则丝毫未动。<br>String设计为不可变类主要考虑到：效率和安全。</p>
 </blockquote>
@@ -473,8 +472,6 @@
 </ul>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>让我们先来了解一下JVM内存中的栈(stack)、堆(heap)和方法区，图如下。<br><img src="/2019/04/07/Java-String-总结/JavaString_Heap.jpg" alt="Heap"></p>
 
-          
-        
       
     </div>
 
@@ -495,161 +492,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kennyJ">
-      <meta itemprop="description" content="不相信自己的人，连努力的价值都没有。">
-      <meta itemprop="image" content="/images/avatar2.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kennyJBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/04/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-04 22:05:24" itemprop="dateCreated datePublished" datetime="2019-04-04T22:05:24+08:00">2019-04-04</time>
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-            
-            
+            <a href="/tags/String/" rel="tag"># String</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/04/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -659,14 +533,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -686,8 +561,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -773,6 +657,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#String简介"><span class="nav-number">1.</span> <span class="nav-text">String简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#String定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">String定义:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不可变String"><span class="nav-number">1.0.2.</span> <span class="nav-text">不可变String</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看看下面的代码："><span class="nav-number">1.0.3.</span> <span class="nav-text">看看下面的代码：</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#下面我们来看看几个测试"><span class="nav-number">2.</span> <span class="nav-text">下面我们来看看几个测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String的创建方式"><span class="nav-number">2.1.</span> <span class="nav-text">String的创建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.2.</span> <span class="nav-text">分析</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -904,6 +805,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -919,6 +824,8 @@
 
   
 
+
+  
 
 
   
